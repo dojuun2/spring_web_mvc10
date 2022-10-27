@@ -16,10 +16,8 @@ public class DatabaseConfig {
 
     @Value("${local.db.username}")
     private String username;
-
     @Value("${local.db.password}")
     private String password;
-
     @Value("${local.db.url}")
     private String url;
 

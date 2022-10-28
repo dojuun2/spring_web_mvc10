@@ -14,9 +14,9 @@
 </head>
 
 <body>
-    <%for(int i=0; i<3;i++){%>
-    <h1>hello.jsp!!!</h1>
-    <%}%>
+
+<h1>hello.jsp!!!</h1>
+
 
 </body>
 

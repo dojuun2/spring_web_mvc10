@@ -28,8 +28,6 @@ public class BoardController {
         List<Board> boardList = service.getList();
         log.info("/board/list GET!!");
 
-
-
         model.addAttribute("bList", boardList);
 
         return "board/list";

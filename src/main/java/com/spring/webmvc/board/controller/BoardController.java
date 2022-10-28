@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -26,6 +27,8 @@ public class BoardController {
     public String list(Model model){
         List<Board> boardList = service.getList();
         log.info("/board/list GET!!");
+
+
 
         model.addAttribute("bList", boardList);
 
@@ -51,10 +54,11 @@ public class BoardController {
 
     // 게시물 등록 요청
     @PostMapping("/write")
-    public String write(Board board){
+    public String write(Board board, RedirectAttributes ra){
         log.info("/board/write POST!! - {}", board);
 
         boolean flag = service.insert(board);
+        ra.addFlashAttribute("msg", "insert-success");  // 등록하고 redirect 될때까지만 살아있는다!!
         return flag ? "redirect:/board/list" : "redirect:/";
     }
 }

@@ -22,6 +22,10 @@ public class Board {
     private int viewCnt;    // 조회수는 기본값 0
     private Date regDate;
 
+    // 커스텀 필드
+    private String shortTitle;  // 줄임 제목
+    private String prettierDate;    // 포맷팅한 날짜문자열
+
     /*private Board(Builder builder) {
         this.boardNo = builder.boardNo;
         this.writer = builder.writer;

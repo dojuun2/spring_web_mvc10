@@ -55,9 +55,10 @@
                 <tr>
                     <td>${b.boardNo}</td>
                     <td>${b.writer}</td>
-                    <td title="${b.title}">${b.title}</td>
+                    <%-- title="" => 제목에 마우스 가져다대면 작게 뜨는 제목... --%>
+                    <td title="${b.title}">${b.shortTitle}</td>
                     <td>0</td>
-                    <td>${b.regDate}</td>
+                    <td>${b.prettierDate}</td>
                 </tr>
             </c:forEach>
         </table>
@@ -83,6 +84,14 @@
         console.log('글번호: ' + bn);
         location.href = '/board/content/' + bn;
     });
+
+    // 게시물 등록 성공시, 알림창 생성
+    const msg = '${msg}';
+    console.log('msg : ', msg)
+
+    if (msg === 'insert-success'){
+        alert('게시물 등록에 성공했습니다!');
+    }
 
 </script>
 
